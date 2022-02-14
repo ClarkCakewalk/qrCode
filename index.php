@@ -109,48 +109,41 @@ function checkfile(sender) {
     else return true;
 }
 </script>
-<h4>批次產生QR code</h4>
-<form id="upload" name="upload" method="post" action="" enctype="multipart/form-data">
-  <p>
-    <label>Step1: 請選擇上傳檔案
-      <input type="file" name="file" id="file" onchange="checkfile(this);" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
-    </label>
-  </p>
-    <p><label>
-  	<table>
-  		<tr>
-  			<td colspan="2">Step2: 請選擇logo</td>
-  		</tr>
-  		<tr>
-  			<td colspan="2"><input type="radio" name="logoImg" value="none" checked="checked">不加logo</td>
-  		</tr>
-  		<tr>
-  			<td><input type="radio" name="logoImg" value="PSFD">PSFD</td>
-  			<td><input type="radio" name="logoImg" value="CSR">CSR</td>
-  		</tr>
-  		<tr>
-  			<td><input type="radio" name="logoImg" value="SRDA">SRDA</td>
-  			<td><input type="radio" name="logoImg" value="SROD">SROD</td>
-  		</tr>
-  		<tr>
-  			<td><input type="radio" name="logoImg" value="RCHSS">RCHSS</td>
-  			<td><input type="radio" name="logoImg" value="AS">Academia Sinica</td>
-  		</tr>
-<!--  		<tr>
-  			<td colspan="2"><input type="radio" name="logoImg" value="custom">自行上傳logo<input type="file" name="clogo" id="clogo" accept="image/png"/><br />自行上傳logo限png格式圖檔。</td>
-  		</tr>
--->  	  		  		
-  	</table>
-  </label></p>
-  <p>
+<div class="batch">
+	<div class="title">批次產生QR code</div>
+	<form id="upload" name="upload" method="post" action="" enctype="multipart/form-data">
+		<div>
+			<label>Step1: 請選擇上傳檔案
+				<input type="file" name="file" id="file" onchange="checkfile(this);" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+			</label>
+		</div>
+		<div><label>
+			<div class="logo">
+				<div>Step2: 請選擇logo</div>
+				<div><input type="radio" name="logoImg" value="none" checked="checked">不加logo</div>
+				<div>
+					<div><input type="radio" name="logoImg" value="PSFD">PSFD</div>
+  					<div><input type="radio" name="logoImg" value="CSR">CSR</div>
+				</div>
+  				<div>
+  					<div><input type="radio" name="logoImg" value="SRDA">SRDA</div>
+  					<div><input type="radio" name="logoImg" value="SROD">SROD</div>
+				</div>
+  				<div>
+  					<div><input type="radio" name="logoImg" value="RCHSS">RCHSS</div>
+  					<div><input type="radio" name="logoImg" value="AS">Academia Sinica</div>
+				</div>  		
+		</div>
+  </label></div>
+  <div>
     <label>
       <input type="submit" name="button" id="button" value="開始轉換"/>
     </label>
-  </p>
+</div>
 </form>
-<p>上傳檔案說明：</p>
-<p>1. 上傳檔案限制為excel格式檔案。</p>
-<p>2. A欄為QR code檔名，B欄為QR code內容（例如網址），第一列為標題列，系統將從第二列開始進行轉換。</p>
+<div>上傳檔案說明：</div>
+<div>1. 上傳檔案限制為excel格式檔案。</div>
+<div>2. A欄為QR code檔名，B欄為QR code內容（例如網址），第一列為標題列，系統將從第二列開始進行轉換。</div>
 <?php
 if (!empty($_FILES)) {
 $filetype=strrchr($_FILES["file"]["name"], ".");
@@ -189,38 +182,32 @@ else {
 }
 }
 ?>
+</div>
 <hr />
-<h4>產生單筆QR Code</h4>
-<form id="form1" name="form1" method="post" action="">
-  <p><label>Step1: 請輸QR Code內容：
-    <input type="text" name="name" id="name" />
-  </label></p>
-  <p><label>
-  	<table>
-  		<tr>
-  			<td colspan="2">Step2: 請選擇logo</td>
-  		</tr>
-  		<tr>
-  			<td colspan="2"><input type="radio" name="logoImg" value="none" checked="checked">不加logo</td>
-  		</tr>
-  		<tr>
-  			<td><input type="radio" name="logoImg" value="PSFD">PSFD</td>
-  			<td><input type="radio" name="logoImg" value="CSR">CSR</td>
-  		</tr>
-  		<tr>
-  			<td><input type="radio" name="logoImg" value="SRDA">SRDA</td>
-  			<td><input type="radio" name="logoImg" value="SROD">SROD</td>
-  		</tr>
-  		<tr>
-  			<td><input type="radio" name="logoImg" value="RCHSS">RCHSS</td>
-  			<td><input type="radio" name="logoImg" value="AS">Academia Sinica</td>
-  		</tr>
- <!-- 		<tr>
-  			<td colspan="2"><input type="radio" name="logoImg" value="custom">自行上傳logo<input type="file" name="clogo" id="clogo" accept="image/png"/><br />自行上傳logo限png格式圖檔。</td>
-  		</tr>
--->  		  	  		  		
-  	</table>
-  </label></p>
+<div class="sigle">
+	<div>產生單筆QR Code</div>
+	<form id="form1" name="form1" method="post" action="">
+  		<div><label>Step1: 請輸QR Code內容：
+    		<input type="text" name="name" id="name" />
+  		</label></div>
+  		<div><label>
+  			<div>
+  				<div>Step2: 請選擇logo</div>
+  				<div><input type="radio" name="logoImg" value="none" checked="checked">不加logo</div>
+		  		<div>
+  					<div><input type="radio" name="logoImg" value="PSFD">PSFD</div>
+  					<div><input type="radio" name="logoImg" value="CSR">CSR</div>
+				</div>
+  				<div>
+  					<div><input type="radio" name="logoImg" value="SRDA">SRDA</div>
+  					<div><input type="radio" name="logoImg" value="SROD">SROD</div>
+				</div>
+  				<div>
+  					<div><input type="radio" name="logoImg" value="RCHSS">RCHSS</div>
+  					<div><input type="radio" name="logoImg" value="AS">Academia Sinica</div>
+				</div>  	  		  		
+			</div>
+  		</label></div>
   <label>
     <input type="submit" name="button2" id="button2" value="查詢" />
   </label>
@@ -230,5 +217,6 @@ if (!empty($_POST["name"])) {
 	echo "<img src=\"".createQRCode($_POST["name"], $_POST["logoImg"], 2)."\"/>";
 }
 ?>
+</div>
 </body>
 </html>
